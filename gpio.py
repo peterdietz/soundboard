@@ -29,23 +29,19 @@ def print_pin(number):
 
 while True:
     try:
-        print_pin(5)
-        print_pin(6)
-        print_pin(13)
-        print_pin(19)
-        print_pin(20)
-        print_pin(21)
-        print_pin(26)
+        for pin in pins:
+            print_pin(pin)
+        print("-------------------------")
 
-        if(GPIO.input(22) == True):
-            soundChannelA.play(soundA)
-            print("soundA")
-        if(GPIO.input(23) == True):
-            soundChannelB.play(soundB)
-            print("soundB")
-        if(GPIO.input(24) == True):
-            soundChannelC.play(soundC)
-            print("soundC")
+        # if(GPIO.input(22) == True):
+        #     soundChannelA.play(soundA)
+        #     print("soundA")
+        # if(GPIO.input(23) == True):
+        #     soundChannelB.play(soundB)
+        #     print("soundB")
+        # if(GPIO.input(24) == True):
+        #     soundChannelC.play(soundC)
+        #     print("soundC")
         sleep(.01)
 
     except KeyboardInterrupt:
