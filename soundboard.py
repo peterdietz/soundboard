@@ -12,22 +12,22 @@ class Soundboard:
     soundboard.playSound(0)
     """
     def __init__(self):
-        self.mixer = pygame.mixer.init(48000, -16, 1, 1024)
-        sndA = pygame.mixer.Sound("sounds/buzzer.wav")
-        sndB = pygame.mixer.Sound("sounds/clap.wav")
-        sndC = pygame.mixer.Sound("sounds/CastleThunder.wav")
-        self.soundboard = {0: sndA, 1: sndB, 2: sndC}
+        pygame.mixer.init(48000, -16, 1, 1024)
+        self.soundboard = {
+            '0': pygame.mixer.Sound("sounds/buzzer.wav"),
+            '1': pygame.mixer.Sound("sounds/clap.wav"),
+            '2': pygame.mixer.Sound("sounds/CastleThunder.wav"),
+            '3': pygame.mixer.Sound("sounds/whats-happening.mp3")
+        }
         print("Soundboard Ready.")
 
-    def play_sound(self, number):
+    def play_sound(self, key):
         try:
-            print(number)
-            num = int(number)
-            print(num)
-            if num in self.soundboard:
-                self.soundboard[num].play()
+            print(key)
+            if key in self.soundboard:
+                self.soundboard[key].play()
             else:
-                print("No sound registered at {}".format(num))
+                print("No sound registered at {}".format(key))
         except Exception as e:
             print(e)
             pass
