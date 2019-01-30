@@ -26,8 +26,7 @@ keypad.registerKeyPressHandler(process_key)
 
 while 1:
     try:
-        print("sleep")
-        time.sleep(1)
+        time.sleep(.5)
     except Exception:
         print("cleanup")
         keypad.cleanup()
