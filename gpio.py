@@ -5,9 +5,9 @@ from sys import exit
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(22,GPIO.IN)
-GPIO.setup(23,GPIO.IN)
-GPIO.setup(24,GPIO.IN)
+pins = [5, 6, 13, 19, 20, 21, 26]
+for pin in pins:
+    GPIO.setup(pin,GPIO.IN)
 
 pygame.mixer.init(48000,-16,1,1024)
 
