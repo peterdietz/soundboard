@@ -24,11 +24,13 @@ factory = rpi_gpio.KeypadFactory()
 keypad = factory.create_keypad(keypad=KEYPAD, row_pins=ROW_PINS, col_pins=COL_PINS)
 keypad.registerKeyPressHandler(process_key)
 
-while 1:
-    try:
+try:
+    while 1:
         time.sleep(.5)
-    except:
-        print("exception")
-    finally:
-        print("Closing")
-        keypad.cleanup()
+except Exception as e:
+    print("exception")
+    print(e)
+finally:
+    print("Closing")
+    soundboard.play_sound(Soundboard.SHUTDOWN_KEY)
+    keypad.cleanup()
