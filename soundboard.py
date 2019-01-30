@@ -20,11 +20,17 @@ class Soundboard:
         print("Soundboard Ready.")
 
     def play_sound(self, number):
-        print(number)
-        if number in self.soundboard:
-            self.soundboard[number].play()
-        else:
-            print("No sound registered at {}".format(number))
+        try:
+            print(number)
+            num = int(number)
+            print(num)
+            if num in self.soundboard:
+                self.soundboard[num].play()
+            else:
+                print("No sound registered at {}".format(num))
+        except Exception as e:
+            print(e)
+            pass
 
 
 
