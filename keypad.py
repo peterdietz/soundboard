@@ -27,9 +27,10 @@ keypad.registerKeyPressHandler(process_key)
 try:
     while 1:
         time.sleep(.5)
-except Exception as e:
+except KeyboardInterrupt:
+    print("Keyboard interupt")
+except:
     print("exception")
-    print(e)
 finally:
     print("Closing")
     soundboard.play_sound(Soundboard.SHUTDOWN_KEY)
