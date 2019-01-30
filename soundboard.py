@@ -25,9 +25,9 @@ class Soundboard:
             '6': "sounds/bye-bye-lil-sebastian.mp3",
             '7': "sounds/baby-shark.mp3",
             '8': "sounds/farts.wav",
-            '9': "sounds/CastleThunder.wav"
+            '9': "sounds/rick-roll.wav",
             #'*': STOP
-            #'0': "sounds/laugh.wav",
+            '0': "sounds/mike-jones.mp3",
             #'#': REPEAT
         }
         print("Soundboard Ready.")
