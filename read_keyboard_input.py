@@ -20,6 +20,7 @@ def main():
     input_thread = threading.Thread(target=read_keyboard_input, args=(input_queue,), daemon=True)
     input_thread.start()
     soundboard = Soundboard()
+    soundboard.play_sound(Soundboard.STARTUP_KEY)
 
     while True:
         try:
@@ -37,6 +38,7 @@ def main():
             time.sleep(0.01)
         except KeyboardInterrupt:
             print("Good Bye")
+            soundboard.play_sound(Soundboard.SHUTDOWN_KEY)
             exit()
 
     print("End.")
