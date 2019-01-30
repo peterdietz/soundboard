@@ -1,4 +1,10 @@
 import pygame.mixer
+import os
+import sys
+
+
+def get_script_path():
+    return os.path.dirname(os.path.realpath(sys.argv[0]))
 
 
 class Soundboard:
@@ -52,7 +58,7 @@ class Soundboard:
 
             if key in self.soundboard:
                 file_name = self.soundboard[key]
-                pygame.mixer.music.load(file_name)
+                pygame.mixer.music.load("{}/{}".format(get_script_path(),file_name))
                 pygame.mixer.music.play()
             elif key == Soundboard.STOP_KEY:
                 pygame.mixer.music.stop()
