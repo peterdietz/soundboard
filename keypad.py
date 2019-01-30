@@ -1,8 +1,11 @@
 from pad4pi import rpi_gpio
 import time
+from soundboard import Soundboard
+soundboard = Soundboard()
 
 def processKey(key):
     print(key)
+    soundboard.play_sound(key)
 
 # Setup Keypad
 KEYPAD = [
