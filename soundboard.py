@@ -21,10 +21,10 @@ class Soundboard:
             '2': "sounds/circus-music.mp3",
             '3': "sounds/whats-happening.mp3",
             '4': "sounds/onshift-mobile-whistle.mp3",
-            '5': "sounds/Scream.wav",
-            '6': "sounds/WilhelmScream.wav",
-            '7': "sounds/applause.wav",
-            '8': "sounds/clap.wav",
+            '5': "sounds/everything-is-awesome.mp3",
+            '6': "sounds/bye-bye-lil-sebastian.mp3",
+            '7': "sounds/baby-shark.mp3",
+            '8': "sounds/farts.wav",
             '9': "sounds/CastleThunder.wav"
             #'*': STOP
             #'0': "sounds/laugh.wav",
