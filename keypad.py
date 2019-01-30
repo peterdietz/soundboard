@@ -33,4 +33,5 @@ except Exception as e:
 finally:
     print("Closing")
     soundboard.play_sound(Soundboard.SHUTDOWN_KEY)
+    time.sleep(3)
     keypad.cleanup()
