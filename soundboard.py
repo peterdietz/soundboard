@@ -2,6 +2,8 @@ import pygame.mixer
 
 
 class Soundboard:
+    STOP_KEY = "*"
+    REPEAT_KEY = "#"
     """
     Ensure there is a sound for each numbered slot
     0 => sounds/buzzer.wav,
@@ -18,15 +20,15 @@ class Soundboard:
             '1': "sounds/boo.mp3",
             '2': "sounds/circus-music.mp3",
             '3': "sounds/whats-happening.mp3",
-            '4': "sounds/onshift-mobile-whistle.wav",
+            '4': "sounds/onshift-mobile-whistle.mp3",
             '5': "sounds/Scream.wav",
             '6': "sounds/WilhelmScream.wav",
             '7': "sounds/applause.wav",
             '8': "sounds/clap.wav",
-            '9': "sounds/CastleThunder.wav",
-            '*': "sounds/buzzer.wav",
-            '0': "sounds/laugh.wav",
-            '#': "sounds/CastleThunder.wav",
+            '9': "sounds/CastleThunder.wav"
+            #'*': STOP
+            #'0': "sounds/laugh.wav",
+            #'#': REPEAT
         }
         print("Soundboard Ready.")
 
@@ -36,6 +38,10 @@ class Soundboard:
             if key in self.soundboard:
                 file_name = self.soundboard[key]
                 pygame.mixer.music.load(file_name)
+                pygame.mixer.music.play()
+            elif key == Soundboard.STOP_KEY:
+                pygame.mixer.music.stop()
+            elif key == Soundboard.REPEAT_KEY:
                 pygame.mixer.music.play()
             else:
                 print("No sound registered at {}".format(key))
